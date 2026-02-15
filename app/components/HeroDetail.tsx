@@ -2,12 +2,9 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import dynamic from "next/dynamic";
 import { Hero } from "@/data/heroes";
 import { cn } from "@/lib/utils";
 import { SkillIcon } from "./SkillIcon";
-
-const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 
 interface HeroDetailProps {
   hero: Hero;
@@ -221,12 +218,20 @@ export function HeroDetail({ hero }: HeroDetailProps) {
                   exit={{ opacity: 0, scale: 0.9 }}
                   className="w-full aspect-video rounded-3xl overflow-hidden border-4 border-indigo-300/20 shadow-2xl bg-black relative"
                 >
-                  <ReactPlayer
-                    url={hero.videoUrl}
-                    width="100%"
-                    height="100%"
-                    controls
-                  />
+                  <div className="w-full h-full flex items-center justify-center text-indigo-300">
+                    <div className="text-center space-y-4">
+                      <div className="text-6xl">🎬</div>
+                      <p className="text-xl font-[Fredoka]">Spotlight Video</p>
+                      <a
+                        href={hero.videoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block px-6 py-3 bg-gradient-to-r from-pink-500 to-purple-600 text-white font-bold rounded-full hover:scale-105 transition-transform"
+                      >
+                        Watch on YouTube
+                      </a>
+                    </div>
+                  </div>
                 </motion.div>
               )}
             </AnimatePresence>
