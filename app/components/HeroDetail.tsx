@@ -225,13 +225,14 @@ export function HeroDetail({ hero }: HeroDetailProps) {
                     url={hero.videoUrl}
                     width="100%"
                     height="100%"
-                    controls
+                    controls={true}
                     light={true}
-                    playIcon={
-                      <div className="w-20 h-20 bg-gradient-to-br from-pink-500 to-purple-600 rounded-full flex items-center justify-center pl-1 shadow-2xl group-hover:scale-110 transition-transform cursor-pointer border-4 border-white/20">
-                        <div className="w-0 h-0 border-t-[12px] border-t-transparent border-l-[22px] border-l-white border-b-[12px] border-b-transparent ml-2" />
-                      </div>
-                    }
+                    playing={false}
+                    config={{
+                      youtube: {
+                        playerVars: { showinfo: 1 }
+                      }
+                    }}
                   />
                 </motion.div>
               )}
