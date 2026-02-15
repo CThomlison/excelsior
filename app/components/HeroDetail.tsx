@@ -94,10 +94,10 @@ export function HeroDetail({ hero }: HeroDetailProps) {
 
           {/* Tabs */}
           <div className="flex gap-2 p-1 bg-black/20 rounded-full w-fit mx-auto md:mx-0 overflow-x-auto max-w-full">
-            {["skills", "tips", "lore", "spotlight"].map((tab) => (
+            {(["skills", "tips", "lore", "spotlight"] as const).map((tab) => (
               <button
                 key={tab}
-                onClick={() => setActiveTab(tab as any)}
+                onClick={() => setActiveTab(tab)}
                 className={cn(
                   "px-5 py-2 text-sm md:text-base font-bold rounded-full transition-all duration-300 font-[Fredoka] capitalize",
                   activeTab === tab
@@ -124,7 +124,7 @@ export function HeroDetail({ hero }: HeroDetailProps) {
                     {hero.skills.map((skill) => (
                       <SkillIcon
                         key={skill.key}
-                        skill={skill as any}
+                        skill={skill}
                         isSelected={selectedSkill === skill.name}
                         onClick={() => setSelectedSkill(skill.name === selectedSkill ? null : skill.name)}
                       />
@@ -208,7 +208,7 @@ export function HeroDetail({ hero }: HeroDetailProps) {
                   className="bg-indigo-900/30 p-8 rounded-3xl border-2 border-indigo-500/20 h-full flex items-center"
                 >
                   <p className="text-indigo-100 text-xl leading-loose font-medium font-[Rubik] italic text-center">
-                    "{hero.lore}"
+                    &ldquo;{hero.lore}&rdquo;
                   </p>
                 </motion.div>
               )}
@@ -219,20 +219,13 @@ export function HeroDetail({ hero }: HeroDetailProps) {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
-                  className="w-full aspect-video rounded-3xl overflow-hidden border-4 border-indigo-300/20 shadow-2xl bg-black relative group"
+                  className="w-full aspect-video rounded-3xl overflow-hidden border-4 border-indigo-300/20 shadow-2xl bg-black relative"
                 >
                   <ReactPlayer
                     url={hero.videoUrl}
                     width="100%"
                     height="100%"
-                    controls={true}
-                    light={true}
-                    playing={false}
-                    config={{
-                      youtube: {
-                        playerVars: { showinfo: 1 }
-                      }
-                    }}
+                    controls
                   />
                 </motion.div>
               )}
