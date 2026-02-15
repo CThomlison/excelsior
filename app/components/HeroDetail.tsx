@@ -2,10 +2,12 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import ReactPlayer from "react-player";
+import dynamic from "next/dynamic";
 import { Hero } from "@/data/heroes";
 import { cn } from "@/lib/utils";
 import { SkillIcon } from "./SkillIcon";
+
+const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 
 interface HeroDetailProps {
   hero: Hero;
