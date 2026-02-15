@@ -6,7 +6,9 @@
       "Bash(unzip:*)",
       "Bash(npm install:*)",
       "Bash(timeout 3 tail:*)",
-      "Bash(exit:*)"
+      "Bash(exit:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
     ]
   }
 }
