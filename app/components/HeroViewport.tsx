@@ -137,9 +137,9 @@ export function HeroViewport({ hero }: HeroViewportProps) {
                return (
                  <motion.button
                    key={index} // Index is stable here
-                   onMouseEnter={() => setHoveredSkill({ ...skill, key: displayKey })} // Pass the display key to tooltip
+                   onMouseEnter={() => setHoveredSkill({ ...skill, key: displayKey as Skill['key'] })} // Pass the display key to tooltip
                    onMouseLeave={() => setHoveredSkill(null)}
-                   onClick={() => setHoveredSkill({ ...skill, key: displayKey })}
+                   onClick={() => setHoveredSkill({ ...skill, key: displayKey as Skill['key'] })}
                    animate={{
                       y: isActive ? -20 : 0,
                       scale: isActive ? 1.1 : 1,
