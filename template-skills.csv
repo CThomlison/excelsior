@@ -1,0 +1,11 @@
+hero_id,key,name,description,iconName,cooldown
+ignis,LMB,Plasma Punch,Deliver a quick series of punches that deal damage in a cone.,HandMetal,
+ignis,RMB,Rocket Dash,Dash forward knocking back enemies in your path.,Rocket,8s
+ignis,Q,Overheat,Ignite your gauntlets dealing bonus burn damage on hit for 5s.,Flame,12s
+ignis,SPC,Jump Jet,Launch into the air to gain high ground.,ArrowUp,6s
+ignis,R,Meteor Strike,Crash down from the sky dealing massive AoE damage.,Meteor,90s
+zenith,LMB,Energy Orb,Fire a precise orb of energy that heals allies or damages enemies.,CircleDot,
+zenith,RMB,Barrier Field,Project a shield in front of you that blocks projectiles.,Shield,10s
+zenith,Q,Harmony Link,Tether to an ally sharing health regeneration.,Link,14s
+zenith,SPC,Levitate,Hover above the ground moving faster and ignoring terrain.,Wind,8s
+zenith,R,Transcendence,Enter a heightened state becoming invulnerable and empowering allies.,Sparkles,120s
