@@ -45,7 +45,7 @@ Your API key should:
 
 **Check in Google Cloud Console:**
 1. Go to: https://console.cloud.google.com/apis/credentials
-2. Find your API key: `AIzaSyDQAjaw7on1wUscQzbEQRHX0yPCPHXdCvo`
+2. Find your API key (stored in .env.local)
 3. Click "Edit"
 4. Make sure "Google Sheets API" is in the list of enabled APIs
 
@@ -54,7 +54,7 @@ Your API key should:
 Open this URL in your browser (replace with your actual values):
 
 ```
-https://sheets.googleapis.com/v4/spreadsheets/1e0TseGQ_qX_QsP2u7bP5Qi7SeVbmft2bjyEoYuOSJDk/values/Heroes?key=AIzaSyDQAjaw7on1wUscQzbEQRHX0yPCPHXdCvo
+https://sheets.googleapis.com/v4/spreadsheets/YOUR_SHEET_ID/values/Heroes?key=YOUR_API_KEY
 ```
 
 **Expected Result:**
@@ -109,10 +109,10 @@ ignis,R,Meteor Strike,Massive AoE damage,Meteor,90s
 
 ## 📚 Current Configuration
 
-Your `.env.local` file has:
+Your `.env.local` file should have:
 ```
-GOOGLE_SHEETS_API_KEY=AIzaSyDQAjaw7on1wUscQzbEQRHX0yPCPHXdCvo
-GOOGLE_SHEETS_SHEET_ID=1e0TseGQ_qX_QsP2u7bP5Qi7SeVbmft2bjyEoYuOSJDk
+GOOGLE_SHEETS_API_KEY=your_api_key_here
+GOOGLE_SHEETS_SHEET_ID=your_sheet_id_here
 ```
 
-Sheet URL: https://docs.google.com/spreadsheets/d/1e0TseGQ_qX_QsP2u7bP5Qi7SeVbmft2bjyEoYuOSJDk/edit
+**IMPORTANT:** Never commit your .env.local file to git!
