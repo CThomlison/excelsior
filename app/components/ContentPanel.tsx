@@ -10,7 +10,7 @@ interface ContentPanelProps {
   hero: Hero;
 }
 
-type ViewSection = "stats" | "lore" | "tips";
+type ViewSection = "stats" | "lore";
 
 export function ContentPanel({ hero }: ContentPanelProps) {
   const [activeSection, setActiveSection] = useState<ViewSection>("stats");
@@ -18,7 +18,6 @@ export function ContentPanel({ hero }: ContentPanelProps) {
   const sections: { id: ViewSection; label: string; icon: any }[] = [
     { id: "stats", label: "Stats", icon: LucideIcons.BarChart2 },
     { id: "lore", label: "Lore", icon: LucideIcons.BookOpen },
-    { id: "tips", label: "Tips", icon: LucideIcons.Lightbulb },
   ];
 
   const getRoleIcon = (role: string) => {
@@ -140,6 +139,13 @@ export function ContentPanel({ hero }: ContentPanelProps) {
                   transition={{ duration: 0.2 }}
                   className="space-y-6 px-1"
                 >
+                   {/* Description Text */}
+                   <div className="pb-4 border-b border-slate-100">
+                      <p className="text-slate-600 leading-relaxed text-sm font-medium">
+                        {hero.description}
+                      </p>
+                   </div>
+
                    {/* Stats List */}
                    <CleanStat label="Power" value={hero.stats.power} color="bg-red-500" />
                    <CleanStat label="Speed" value={hero.stats.speed} color="bg-yellow-400" />
@@ -180,35 +186,6 @@ export function ContentPanel({ hero }: ContentPanelProps) {
                 </motion.div>
              )}
 
-             {/* TIPS */}
-             {activeSection === "tips" && (
-                <motion.div
-                  key="tips"
-                  initial={{ opacity: 0, x: 10 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -10 }}
-                  className="space-y-3"
-                >
-                  <div className="flex items-center justify-between mb-4">
-                     <h3 className="text-xs font-black text-slate-900 uppercase tracking-widest">Combat Guide</h3>
-                     <LucideIcons.Crosshair size={14} className="text-slate-300" />
-                  </div>
-
-                  {hero.tips.map((tip, i) => (
-                    <div key={i} className="group relative pl-6 pb-2">
-                      {/* Decorative Line */}
-                      <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-slate-100 group-hover:bg-cyan-400 transition-colors" />
-
-                      {/* Number */}
-                      <div className="absolute left-[-5px] top-0 w-3 h-3 rounded-full bg-white border-2 border-slate-200 group-hover:border-cyan-400 transition-colors z-10" />
-
-                      <p className="text-slate-600 text-sm leading-relaxed font-medium group-hover:text-slate-900 transition-colors">
-                        {tip}
-                      </p>
-                    </div>
-                  ))}
-                </motion.div>
-             )}
 
           </AnimatePresence>
         </div>
