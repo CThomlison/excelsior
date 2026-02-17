@@ -141,7 +141,7 @@ export function ContentPanel({ hero }: ContentPanelProps) {
                   className="space-y-6 px-1"
                 >
                    {/* Stats List */}
-                   <CleanStat label="Strength" value={hero.stats.strength} color="bg-red-500" />
+                   <CleanStat label="Power" value={hero.stats.power} color="bg-red-500" />
                    <CleanStat label="Speed" value={hero.stats.speed} color="bg-yellow-400" />
                    <CleanStat label="Durability" value={hero.stats.durability} color="bg-blue-500" />
                    <CleanStat label="Control" value={hero.stats.control} color="bg-purple-500" />

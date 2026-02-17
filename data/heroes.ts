@@ -22,7 +22,7 @@ export interface Hero {
   videoUrl: string;
   tips: string[];
   stats: {
-    strength: string;
+    power: string;
     speed: string;
     durability: string;
     control: string;
@@ -55,7 +55,7 @@ export const HEROES: Hero[] = [
       "Activate Overheat before engaging in a brawl for maximum damage output."
     ],
     stats: {
-      strength: "S+",
+      power: "S+",
       speed: "A",
       durability: "B",
       control: "C"
@@ -86,7 +86,7 @@ export const HEROES: Hero[] = [
       "Levitate allows you to position yourself safely on high ledges."
     ],
     stats: {
-      strength: "C",
+      power: "C",
       speed: "B",
       durability: "A",
       control: "S+"
@@ -117,7 +117,7 @@ export const HEROES: Hero[] = [
       "Warp can be used to engage or disengage unexpected angles."
     ],
     stats: {
-      strength: "B",
+      power: "B",
       speed: "S",
       durability: "C",
       control: "A"
@@ -148,7 +148,7 @@ export const HEROES: Hero[] = [
       "Crystal Spire provides excellent area denial."
     ],
     stats: {
-      strength: "C",
+      power: "C",
       speed: "B",
       durability: "S",
       control: "A"

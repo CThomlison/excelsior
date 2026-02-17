@@ -129,7 +129,7 @@ export async function GET() {
           type: (skill as any).type || 'Active',
         })),
         stats: {
-          strength: (heroData as any).strength || 'B',
+          power: (heroData as any).power || 'B',
           speed: (heroData as any).speed || 'B',
           durability: (heroData as any).durability || 'B',
           control: (heroData as any).control || 'B',
